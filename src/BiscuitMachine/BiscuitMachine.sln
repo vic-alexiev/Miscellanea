@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMachine.Web", "BiscuitMachine.Web\BiscuitMachine.Web.csproj", "{BF0B85FE-91B8-435B-A1BA-60564D8379DD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BiscuitMachine.Web", "BiscuitMachine.Web\BiscuitMachine.Web.csproj", "{BF0B85FE-91B8-435B-A1BA-60564D8379DD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMachine.Engine", "BiscuitMachine.Engine\BiscuitMachine.Engine.csproj", "{AA925D24-C2B6-4939-81FF-D11C2368A96A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMachine.Utils", "BiscuitMachine.Utils\BiscuitMachine.Utils.csproj", "{BA0965C7-6761-40B8-A0E0-BF62BB45DF18}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA925D24-C2B6-4939-81FF-D11C2368A96A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA925D24-C2B6-4939-81FF-D11C2368A96A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA925D24-C2B6-4939-81FF-D11C2368A96A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA925D24-C2B6-4939-81FF-D11C2368A96A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA0965C7-6761-40B8-A0E0-BF62BB45DF18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA0965C7-6761-40B8-A0E0-BF62BB45DF18}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA0965C7-6761-40B8-A0E0-BF62BB45DF18}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA0965C7-6761-40B8-A0E0-BF62BB45DF18}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
