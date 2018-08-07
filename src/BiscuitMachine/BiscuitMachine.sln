@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiscuitMachine.Web", "BiscuitMachine.Web\BiscuitMachine.Web.csproj", "{BF0B85FE-91B8-435B-A1BA-60564D8379DD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF0B85FE-91B8-435B-A1BA-60564D8379DD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6DD12BE1-ACCF-438F-8A20-D9B476EC5F43}
+	EndGlobalSection
+EndGlobal
