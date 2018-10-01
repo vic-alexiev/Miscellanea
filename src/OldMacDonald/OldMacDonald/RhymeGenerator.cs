@@ -7,18 +7,18 @@ namespace OldMacDonald
 {
     public class RhymeGenerator : IRhymeGenerator
     {
-        private IIOManager _ioManager;
+        private IIOService _ioService;
         private ISongWriter _songWriter;
 
-        public RhymeGenerator(IIOManager ioManager, ISongWriter songWriter)
+        public RhymeGenerator(IIOService ioService, ISongWriter songWriter)
         {
-            _ioManager = ioManager;
+            _ioService = ioService;
             _songWriter = songWriter;
         }
 
         public void Run()
         {
-            _ioManager.WriteLine(
+            _ioService.WriteLine(
                 "\t\tOLD MACDONALD HAD A FARM{0}{0}" +
                 "Commands:{0}" +
                 " - To see the nursery rhyme lyrics, type \"old\".{0}" +
@@ -29,19 +29,19 @@ namespace OldMacDonald
             {
                 while (true)
                 {
-                    _ioManager.Write("Command: ");
-                    string command = _ioManager.ReadLine();
+                    _ioService.Write("Command: ");
+                    string command = _ioService.ReadLine();
 
                     switch (command)
                     {
                         case "old":
                             {
-                                _ioManager.WriteLine(GetOldSongLyrics());
+                                _ioService.WriteLine(GetOldSongLyrics());
                                 break;
                             }
                         case "new":
                             {
-                                _ioManager.WriteLine(MakeNewVerses(6, 30));
+                                _ioService.WriteLine(MakeNewVerses(6, 30));
                                 break;
                             }
                         case "exit":
@@ -55,11 +55,11 @@ namespace OldMacDonald
             }
             catch (SongException se)
             {
-                _ioManager.WriteLine($"Song generation failure: {se.Message}");
+                _ioService.WriteLine($"Rhyme generation failure: {se.Message}");
             }
             catch (Exception e)
             {
-                _ioManager.WriteLine(e.Message);
+                _ioService.WriteLine(e.Message);
             }
         }
 
@@ -83,8 +83,8 @@ namespace OldMacDonald
             int versesCount;
             do
             {
-                _ioManager.Write($"Count (max value: {maxCount}): ");
-                string count = _ioManager.ReadLine();
+                _ioService.Write($"Count (max value: {maxCount}): ");
+                string count = _ioService.ReadLine();
                 versesCountValid = int.TryParse(count, out versesCount);
             } while (!versesCountValid || versesCount <= 0 || versesCount > maxCount);
 
@@ -101,15 +101,15 @@ namespace OldMacDonald
             {
                 do
                 {
-                    _ioManager.Write($"Animal {i + 1} ({limitations}): ");
-                    animalName = _ioManager.ReadLine();
+                    _ioService.Write($"Animal {i + 1} ({limitations}): ");
+                    animalName = _ioService.ReadLine();
                     animalNameValid = Regex.IsMatch(animalName, pattern);
                 } while (!animalNameValid || animalName.Length > inputMaxLength);
 
                 do
                 {
-                    _ioManager.Write($"Animal {i + 1} sound ({limitations}): ");
-                    animalSound = _ioManager.ReadLine();
+                    _ioService.Write($"Animal {i + 1} sound ({limitations}): ");
+                    animalSound = _ioService.ReadLine();
                     animalSoundValid = Regex.IsMatch(animalSound, pattern);
                 } while (!animalSoundValid || animalSound.Length > inputMaxLength);
 

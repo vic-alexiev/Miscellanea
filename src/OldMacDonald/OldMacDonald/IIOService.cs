@@ -5,7 +5,7 @@ namespace OldMacDonald
     /// <summary>
     /// Exposes methods for handling I/O operations.
     /// </summary>
-    public interface IIOManager
+    public interface IIOService
     {
         /// <summary>
         /// Sets the <see cref="System.Console.In"/> property to the specified 

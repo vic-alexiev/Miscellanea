@@ -6,7 +6,7 @@ namespace OldMacDonald
     /// <summary>
     /// Used to handle Console I/O operations.
     /// </summary>
-    public class ConsoleManager : IIOManager
+    public class ConsoleService : IIOService
     {
         /// <summary>
         /// Writes the specified string value to the standard output stream.
