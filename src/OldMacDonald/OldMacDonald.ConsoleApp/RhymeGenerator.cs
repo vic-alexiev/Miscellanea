@@ -22,7 +22,7 @@ namespace OldMacDonald.ConsoleApp
                 "\t\tOLD MACDONALD HAD A FARM{0}{0}" +
                 "Commands:{0}" +
                 " - To see the nursery rhyme lyrics, type \"old\".{0}" +
-                " - To write new verses with an animal of your choice, type \"new\".{0}" +
+                " - To write new verses with animals of your choice, type \"new\".{0}" +
                 " - To exit the program, type \"exit\".{0}",
                 Environment.NewLine);
             try

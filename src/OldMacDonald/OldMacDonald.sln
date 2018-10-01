@@ -9,6 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald.Song", "OldMac
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald.Tests", "OldMacDonald.Tests\OldMacDonald.Tests.csproj", "{B3A4C48E-4BCA-4080-B7AF-5FB1B08B9750}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{277AD9E6-07F6-4ACA-9E2E-059065751ED0}"
+	ProjectSection(SolutionItems) = preProject
+		Docs\OldMacDonald.docx = Docs\OldMacDonald.docx
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
