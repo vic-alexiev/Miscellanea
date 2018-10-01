@@ -2,7 +2,7 @@
 
 Commands:
  - To see the nursery rhyme lyrics, type "old".
- - To write new verses with animals of your choice, type "new".
+ - To write new verses with animals of your choosing, type "new".
  - To exit the program, type "exit".
 
 Command: Count (max value: 6): Animal 1 (max length: 30, allowed chars: English letters, hyphen): Animal 1 sound (max length: 30, allowed chars: English letters, hyphen): Animal 2 (max length: 30, allowed chars: English letters, hyphen): Animal 2 sound (max length: 30, allowed chars: English letters, hyphen): Animal 3 (max length: 30, allowed chars: English letters, hyphen): Animal 3 sound (max length: 30, allowed chars: English letters, hyphen): 
