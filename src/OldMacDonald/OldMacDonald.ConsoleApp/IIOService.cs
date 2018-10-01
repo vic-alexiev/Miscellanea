@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace OldMacDonald
+namespace OldMacDonald.ConsoleApp
 {
     /// <summary>
     /// Exposes methods for handling I/O operations.

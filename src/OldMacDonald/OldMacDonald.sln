@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald", "OldMacDonald\OldMacDonald.csproj", "{0A7927A4-A981-405B-9F76-55D6C0CFE16D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald.ConsoleApp", "OldMacDonald.ConsoleApp\OldMacDonald.ConsoleApp.csproj", "{0A7927A4-A981-405B-9F76-55D6C0CFE16D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald.Song", "OldMacDonald.Song\OldMacDonald.Song.csproj", "{A303876D-1655-4B6A-9389-8DA90A4B3690}"
 EndProject

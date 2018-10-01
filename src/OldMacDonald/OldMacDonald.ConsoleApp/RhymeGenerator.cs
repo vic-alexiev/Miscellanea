@@ -3,7 +3,7 @@ using System.Text.RegularExpressions;
 using OldMacDonald.Song;
 using OldMacDonald.Song.Farm;
 
-namespace OldMacDonald
+namespace OldMacDonald.ConsoleApp
 {
     public class RhymeGenerator : IRhymeGenerator
     {

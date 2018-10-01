@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using OldMacDonald.Song;
 
-namespace OldMacDonald
+namespace OldMacDonald.ConsoleApp
 {
     internal class Program
     {

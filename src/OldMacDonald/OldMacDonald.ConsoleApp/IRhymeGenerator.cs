@@ -1,4 +1,4 @@
-﻿namespace OldMacDonald
+﻿namespace OldMacDonald.ConsoleApp
 {
     public interface IRhymeGenerator
     {

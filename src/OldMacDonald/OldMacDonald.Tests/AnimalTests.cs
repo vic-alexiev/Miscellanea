@@ -22,7 +22,7 @@ namespace OldMacDonald.Tests
         [InlineData("       ")]
         public void Animal_CreateAnimal_AnimalWithInvalidSoundIsCreated(string sound)
         {
-            var ex = Assert.Throws<SongException>(() => new Animal("crocodile", sound));
+            var ex = Assert.Throws<SongException>(() => new Animal("fish", sound));
             Assert.Equal("Animal sound must be specified.", ex.Message);
         }
 

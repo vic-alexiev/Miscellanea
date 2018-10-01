@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace OldMacDonald
+namespace OldMacDonald.ConsoleApp
 {
     /// <summary>
     /// Used to handle Console I/O operations.
