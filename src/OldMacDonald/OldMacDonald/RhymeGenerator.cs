@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Text.RegularExpressions;
-using OldMacDonald.Farm;
+using OldMacDonald.Song;
+using OldMacDonald.Song.Farm;
 
 namespace OldMacDonald
 {
@@ -24,31 +25,41 @@ namespace OldMacDonald
                 " - To write new verses with an animal of your choice, type \"new\".{0}" +
                 " - To exit the program, type \"exit\".{0}",
                 Environment.NewLine);
-
-            while (true)
+            try
             {
-                _ioManager.Write("Command: ");
-                string command = _ioManager.ReadLine();
-
-                switch (command)
+                while (true)
                 {
-                    case "old":
-                        {
-                            _ioManager.WriteLine(GetOldSongLyrics());
+                    _ioManager.Write("Command: ");
+                    string command = _ioManager.ReadLine();
+
+                    switch (command)
+                    {
+                        case "old":
+                            {
+                                _ioManager.WriteLine(GetOldSongLyrics());
+                                break;
+                            }
+                        case "new":
+                            {
+                                _ioManager.WriteLine(MakeNewVerses(6, 30));
+                                break;
+                            }
+                        case "exit":
+                            {
+                                return;
+                            }
+                        default:
                             break;
-                        }
-                    case "new":
-                        {
-                            _ioManager.WriteLine(MakeNewVerses(6, 30));
-                            break;
-                        }
-                    case "exit":
-                        {
-                            return;
-                        }
-                    default:
-                        break;
+                    }
                 }
+            }
+            catch (SongException se)
+            {
+                _ioManager.WriteLine($"Song generation failure: {se.Message}");
+            }
+            catch (Exception e)
+            {
+                _ioManager.WriteLine(e.Message);
             }
         }
 

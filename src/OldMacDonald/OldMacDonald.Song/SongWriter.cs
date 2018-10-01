@@ -1,14 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using OldMacDonald.Farm;
+using OldMacDonald.Song.Farm;
 
-namespace OldMacDonald
+namespace OldMacDonald.Song
 {
     public class SongWriter : ISongWriter
     {
         public string Compose(IEnumerable<Animal> animals)
         {
+            if (animals == null || !animals.Any())
+            {
+                return string.Empty;
+            }
+
+            if (animals.Any(a => a == null))
+            {
+                throw new SongException("Uninitialized animal object found.");
+            }
+
             StringBuilder songBuilder = new StringBuilder();
             string verse =
                 "{0}Old MacDonald had a farm, E - I - E - I - O,{0}" +

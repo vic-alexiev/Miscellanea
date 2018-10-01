@@ -1,4 +1,4 @@
-﻿namespace OldMacDonald.Farm
+﻿namespace OldMacDonald.Song.Farm
 {
     public class Duck : Animal
     {

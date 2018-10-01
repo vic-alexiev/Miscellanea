@@ -1,4 +1,6 @@
-﻿namespace OldMacDonald
+﻿using OldMacDonald.Song;
+
+namespace OldMacDonald
 {
     internal class RhymingEngine
     {

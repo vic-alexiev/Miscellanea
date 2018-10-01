@@ -1,7 +1,7 @@
-﻿using OldMacDonald.Farm;
+﻿using OldMacDonald.Song.Farm;
 using System.Collections.Generic;
 
-namespace OldMacDonald
+namespace OldMacDonald.Song
 {
     public interface ISongWriter
     {
