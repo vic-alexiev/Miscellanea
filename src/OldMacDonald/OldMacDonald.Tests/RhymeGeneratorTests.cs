@@ -45,9 +45,9 @@ namespace OldMacDonald.Tests
             string outputFilePath)
         {
             IIOService ioService = new ConsoleService();
-            ISongWriter songWriter = new SongWriter();
             IValidator validator = new Validator(new ValidatorSettings());
-            _rhymeGenerator = new RhymeGenerator(ioService, songWriter, validator);
+            ISongWriter songWriter = new SongWriter();
+            _rhymeGenerator = new RhymeGenerator(ioService, validator, songWriter);
 
             using (StreamReader reader = new StreamReader(inputFilePath))
             {

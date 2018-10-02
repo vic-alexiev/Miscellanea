@@ -20,10 +20,10 @@ namespace OldMacDonald.ConsoleApp
                 .AddSingleton<IRhymeGenerator>(provider =>
                 {
                     var ioService = provider.GetService<IIOService>();
-                    var songWriter = provider.GetService<ISongWriter>();
                     var validator = provider.GetService<IValidator>();
+                    var songWriter = provider.GetService<ISongWriter>();
 
-                    return new RhymeGenerator(ioService, songWriter, validator);
+                    return new RhymeGenerator(ioService, validator, songWriter);
                 })
                 .BuildServiceProvider();
 

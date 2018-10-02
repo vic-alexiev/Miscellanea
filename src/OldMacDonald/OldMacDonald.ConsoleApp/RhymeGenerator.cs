@@ -7,17 +7,17 @@ namespace OldMacDonald.ConsoleApp
     public class RhymeGenerator : IRhymeGenerator
     {
         private IIOService _ioService;
-        private ISongWriter _songWriter;
         private IValidator _validator;
+        private ISongWriter _songWriter;
 
         public RhymeGenerator(
             IIOService ioService,
-            ISongWriter songWriter,
-            IValidator validator)
+            IValidator validator,
+            ISongWriter songWriter)
         {
             _ioService = ioService;
-            _songWriter = songWriter;
             _validator = validator;
+            _songWriter = songWriter;
         }
 
         public void Run()
