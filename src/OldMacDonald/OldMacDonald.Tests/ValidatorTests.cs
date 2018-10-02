@@ -1,5 +1,5 @@
-﻿using OldMacDonald.Song;
-using Xunit;
+﻿using Xunit;
+using OldMacDonald.Song;
 
 namespace OldMacDonald.Tests
 {
