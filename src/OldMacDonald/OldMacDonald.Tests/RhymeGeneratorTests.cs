@@ -8,10 +8,8 @@ namespace OldMacDonald.Tests
 {
     public class RhymeGeneratorTests
     {
-        private IRhymeGenerator _rhymeGenerator;
-
         [Fact]
-        public void RhymeGenerator_CommandOld_OutputNurseryRhymeLyrics()
+        public void Run_CommandOld_OutputNurseryRhymeLyrics()
         {
             string inputFilePath = "../../../Resources/SampleInput_Old.in";
             string outputFilePath = "../../../Resources/SampleOutput.out";
@@ -26,7 +24,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void RhymeGenerator_CommandNew_Output3NewVerses()
+        public void Run_CommandNew_Output3NewVerses()
         {
             string inputFilePath = "../../../Resources/SampleInput_New.in";
             string outputFilePath = "../../../Resources/SampleOutput.out";
@@ -47,7 +45,7 @@ namespace OldMacDonald.Tests
             IIOService ioService = new ConsoleService();
             IValidator validator = new Validator(new ValidatorSettings());
             ISongWriter songWriter = new SongWriter();
-            _rhymeGenerator = new RhymeGenerator(ioService, validator, songWriter);
+            IRhymeGenerator rhymeGenerator = new RhymeGenerator(ioService, validator, songWriter);
 
             using (StreamReader reader = new StreamReader(inputFilePath))
             {
@@ -55,7 +53,7 @@ namespace OldMacDonald.Tests
                 {
                     ioService.SetIn(reader);
                     ioService.SetOut(writer);
-                    _rhymeGenerator.Run();
+                    rhymeGenerator.Run();
                 }
             }
         }

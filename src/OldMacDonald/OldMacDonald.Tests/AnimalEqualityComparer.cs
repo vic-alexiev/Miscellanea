@@ -7,11 +7,18 @@ namespace OldMacDonald.Tests
     {
         public bool Equals(Animal x, Animal y)
         {
-            if (x == null)
+            if (x == null && y == null)
             {
-                return y == null;
+                return true;
             }
-            return x.Name == y.Name;
+            else if (x != null && y != null)
+            {
+                return x.Name == y.Name;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int GetHashCode(Animal obj)

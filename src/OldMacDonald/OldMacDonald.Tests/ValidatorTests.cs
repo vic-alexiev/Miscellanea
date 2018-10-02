@@ -15,7 +15,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Validator_Create_ValidatorExposesSettingsProperties()
+        public void Constructor_ValidatorExposesSettingsProperties()
         {
             Assert.Equal(_settings.VersesMaxCount, _validator.VersesMaxCount);
             Assert.Equal(_settings.AnimalNameMaxLength, _validator.AnimalNameMaxLength);
@@ -26,7 +26,7 @@ namespace OldMacDonald.Tests
         [InlineData("1")]
         [InlineData("7")]
         [InlineData("10")]
-        public void Validator_ValidateVersesCount_ValidationSuccessful(string value)
+        public void ValidateVersesCount_ValidationSuccessful(string value)
         {
             Assert.True(_validator.ValidateVersesCount(value));
         }
@@ -39,7 +39,7 @@ namespace OldMacDonald.Tests
         [InlineData("0")]
         [InlineData("11")]
         [InlineData("100")]
-        public void Validator_ValidateVersesCount_ValidationFails(string value)
+        public void ValidateVersesCount_ValidationFails(string value)
         {
             Assert.False(_validator.ValidateVersesCount(value));
         }
@@ -54,7 +54,7 @@ namespace OldMacDonald.Tests
         [InlineData("kTn")]
         [InlineData("bow-woow-wooooooooooooooooooow")]
         [InlineData("o-o-o-o-o-o-o-o-o-o-o-o-o-o-o")]
-        public void Validator_ValidateAnimalName_ValidationSuccessful(string value)
+        public void ValidateAnimalName_ValidationSuccessful(string value)
         {
             Assert.True(_validator.ValidateAnimalName(value));
         }
@@ -69,7 +69,7 @@ namespace OldMacDonald.Tests
         [InlineData("kT'n")]
         [InlineData("bow-woow-w0000w")]
         [InlineData("#%&*(^()@%#^&")]
-        public void Validator_ValidateAnimalName_ValidationFails(string value)
+        public void ValidateAnimalName_ValidationFails(string value)
         {
             Assert.False(_validator.ValidateAnimalName(value));
         }
@@ -84,7 +84,7 @@ namespace OldMacDonald.Tests
         [InlineData("miaou-miaou-miaou")]
         [InlineData("bow-woow-wooooooooooooooooooow")]
         [InlineData("o-o-o-o-o-o-o-o-o-o-o-o-o-o-o")]
-        public void Validator_ValidateAnimalSound_ValidationSuccessful(string value)
+        public void ValidateAnimalSound_ValidationSuccessful(string value)
         {
             Assert.True(_validator.ValidateAnimalSound(value));
         }
@@ -99,7 +99,7 @@ namespace OldMacDonald.Tests
         [InlineData("miaou-miaou-miaou-miaou-miaou-miaou")]
         [InlineData("bow-woow-woooooooooooooooooooow")]
         [InlineData(")#%*(&#%&#$*^(")]
-        public void Validator_ValidateAnimalSound_ValidationFails(string value)
+        public void ValidateAnimalSound_ValidationFails(string value)
         {
             Assert.False(_validator.ValidateAnimalSound(value));
         }

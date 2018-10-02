@@ -16,7 +16,7 @@ namespace OldMacDonald.Tests
         private Mock<ISongWriter> _songWriterMock;
 
         [Fact]
-        public void RhymeGenerator_CommandOld_ComposeSongWithPredefinedAnimals()
+        public void Run_CommandOld_ComposeSongWithPredefinedAnimals()
         {
             string inputFilePath = "../../../Resources/SampleInput_Old.in";
             string outputFilePath = "../../../Resources/SampleOutput.out";
@@ -51,7 +51,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void RhymeGenerator_CommandNew_ComposeSongWith3NewAnimals()
+        public void Run_CommandNew_ComposeSongWith3NewAnimals()
         {
             string inputFilePath = "../../../Resources/SampleInput_New.in";
             string outputFilePath = "../../../Resources/SampleOutput.out";
@@ -96,8 +96,8 @@ namespace OldMacDonald.Tests
         }
 
         private void InitializeAndRunRhymeGenerator(
-        string inputFilePath,
-        string outputFilePath)
+            string inputFilePath,
+            string outputFilePath)
         {
             IIOService ioService = new ConsoleService();
             _validatorMock = new Mock<IValidator>();

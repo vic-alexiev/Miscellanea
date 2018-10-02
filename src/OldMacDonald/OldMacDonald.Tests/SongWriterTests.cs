@@ -8,7 +8,7 @@ namespace OldMacDonald.Tests
     public class SongWriterTests
     {
         [Fact]
-        public void SongWriter_ComposeAnimalsNull_EmptyStringIsReturned()
+        public void Compose_AnimalsNull_EmptyStringIsReturned()
         {
             ISongWriter songWriter = new SongWriter();
 
@@ -18,7 +18,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void SongWriter_ComposeAnimalsEmpty_EmptyStringIsReturned()
+        public void Compose_AnimalsEmpty_EmptyStringIsReturned()
         {
             ISongWriter songWriter = new SongWriter();
 
@@ -28,7 +28,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void SongWriter_ComposeAnimalsContainsNull_ThrowsException()
+        public void Compose_AnimalsContainsNull_ThrowsException()
         {
             ISongWriter songWriter = new SongWriter();
 
@@ -43,7 +43,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void SongWriter_Compose2Animals_ValidVerseIsReturned()
+        public void Compose_2Animals_2ValidVersesAreReturned()
         {
             ISongWriter songWriter = new SongWriter();
 
@@ -70,7 +70,7 @@ Old MacDonald had a farm, E - I - E - I - O.
         }
 
         [Fact]
-        public void SongWriter_Compose3Animals_ValidVerseIsReturned()
+        public void Compose_3Animals_3ValidVersesAreReturned()
         {
             ISongWriter songWriter = new SongWriter();
 

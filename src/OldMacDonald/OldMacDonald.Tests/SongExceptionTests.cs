@@ -7,7 +7,7 @@ namespace OldMacDonald.Tests
     public class SongExceptionTest
     {
         [Fact]
-        public void TestConstructor_NoParameters()
+        public void Constructor_NoParameters()
         {
             SongException songEx = new SongException();
 
@@ -16,7 +16,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void TestConstructor_MessageProvided()
+        public void Constructor_MessageProvided()
         {
             SongException songEx = new SongException("Test");
 
@@ -25,7 +25,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void TestConstructor_MessageAndInnerExceptionProvided()
+        public void Constructor_MessageAndInnerExceptionProvided()
         {
             Exception innerEx = new InvalidOperationException();
             SongException songEx = new SongException("Test", innerEx);

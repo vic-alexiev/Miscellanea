@@ -10,7 +10,7 @@ namespace OldMacDonald.Tests
         [InlineData(null)]
         [InlineData("")]
         [InlineData("       ")]
-        public void Animal_CreateAnimal_AnimalWithInvalidNameIsCreated(string name)
+        public void CreateAnimal_InvalidName_ThrowsException(string name)
         {
             var ex = Assert.Throws<SongException>(() => new Animal(name, "miaou"));
             Assert.Equal("Animal name must be specified.", ex.Message);
@@ -20,7 +20,7 @@ namespace OldMacDonald.Tests
         [InlineData(null)]
         [InlineData("")]
         [InlineData("       ")]
-        public void Animal_CreateAnimal_AnimalWithInvalidSoundIsCreated(string sound)
+        public void CreateAnimal_InvalidSound_ThrowsException(string sound)
         {
             var ex = Assert.Throws<SongException>(() => new Animal("fish", sound));
             Assert.Equal("Animal sound must be specified.", ex.Message);
@@ -31,7 +31,7 @@ namespace OldMacDonald.Tests
         [InlineData("sample animal", "cock-a-doodle-doo")]
         [InlineData("donkey", "bray...    bray")]
         [InlineData("liger", "<~%^#@#@#@$%#)*@(*&^#%@$>~")]
-        public void Animal_CreateAnimal_AnimalWithCorrectNameAndSoundIsCreated(
+        public void CreateAnimal_ValidNameAndSound_Created(
             string name,
             string sound)
         {
@@ -41,7 +41,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Animal_CreateCow_AnimalWithCorrectNameAndSoundIsCreated()
+        public void CreateCow_AnimalWithCorrectNameAndSoundIsCreated()
         {
             Cow cow = new Cow();
             Assert.Equal("cow", cow.Name);
@@ -49,7 +49,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Animal_CreateDuck_AnimalWithCorrectNameAndSoundIsCreated()
+        public void CreateDuck_AnimalWithCorrectNameAndSoundIsCreated()
         {
             Duck duck = new Duck();
             Assert.Equal("duck", duck.Name);
@@ -57,7 +57,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Animal_CreateHorse_AnimalWithCorrectNameAndSoundIsCreated()
+        public void CreateHorse_AnimalWithCorrectNameAndSoundIsCreated()
         {
             Horse horse = new Horse();
             Assert.Equal("horse", horse.Name);
@@ -65,7 +65,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Animal_CreateLamb_AnimalWithCorrectNameAndSoundIsCreated()
+        public void CreateLamb_AnimalWithCorrectNameAndSoundIsCreated()
         {
             Lamb lamb = new Lamb();
             Assert.Equal("lamb", lamb.Name);
@@ -73,7 +73,7 @@ namespace OldMacDonald.Tests
         }
 
         [Fact]
-        public void Animal_CreatePig_AnimalWithCorrectNameAndSoundIsCreated()
+        public void CreatePig_AnimalWithCorrectNameAndSoundIsCreated()
         {
             Pig pig = new Pig();
             Assert.Equal("pig", pig.Name);

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace OldMacDonald.Song
+﻿namespace OldMacDonald.Song
 {
     public class ValidatorSettings : IValidatorSettings
     {
