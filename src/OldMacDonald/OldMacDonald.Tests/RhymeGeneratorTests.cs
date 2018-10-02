@@ -14,7 +14,7 @@ namespace OldMacDonald.Tests
         public void RhymeGenerator_CommandOld_OutputNurseryRhymeLyrics()
         {
             string inputFilePath = "../../../Resources/SampleInput_Old.in";
-            string outputFilePath = "../../../Resources/SampleOutput_Old.out";
+            string outputFilePath = "../../../Resources/SampleOutput.out";
             string expectedOutputFilePath = "../../../Resources/ExpectedOutput_Old.out";
 
             InitializeAndRunRhymeGenerator(inputFilePath, outputFilePath);
@@ -29,7 +29,7 @@ namespace OldMacDonald.Tests
         public void RhymeGenerator_CommandNew_Output3NewVerses()
         {
             string inputFilePath = "../../../Resources/SampleInput_New.in";
-            string outputFilePath = "../../../Resources/SampleOutput_New.out";
+            string outputFilePath = "../../../Resources/SampleOutput.out";
             string expectedOutputFilePath = "../../../Resources/ExpectedOutput_New.out";
 
             InitializeAndRunRhymeGenerator(inputFilePath, outputFilePath);

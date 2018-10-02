@@ -2,10 +2,6 @@
 {
     public class Animal
     {
-        public string Name { get; }
-
-        public string Sound { get; }
-
         public Animal(string name, string sound)
         {
             if (string.IsNullOrWhiteSpace(name))
@@ -21,5 +17,9 @@
             Name = name;
             Sound = sound;
         }
+
+        public string Name { get; }
+
+        public string Sound { get; }
     }
 }
