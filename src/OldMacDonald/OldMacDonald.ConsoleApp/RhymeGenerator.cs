@@ -99,7 +99,7 @@ namespace OldMacDonald.ConsoleApp
             {
                 do
                 {
-                    _ioService.Write($"Animal {i + 1} (max length: {_validator.AnimalNameMaxLength}): ");
+                    _ioService.Write($"Animal {i + 1} name (max length: {_validator.AnimalNameMaxLength}): ");
                     name = _ioService.ReadLine();
                 } while (!_validator.ValidateAnimalName(name));
 

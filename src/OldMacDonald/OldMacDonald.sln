@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OldMacDonald.Tests", "OldMa
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{277AD9E6-07F6-4ACA-9E2E-059065751ED0}"
 	ProjectSection(SolutionItems) = preProject
-		Docs\OldMacDonald.docx = Docs\OldMacDonald.docx
+		Docs\Assignment.doc = Docs\Assignment.doc
+		Docs\ClassDiagram.png = Docs\ClassDiagram.png
+		Docs\Verse.png = Docs\Verse.png
 	EndProjectSection
 EndProject
 Global
