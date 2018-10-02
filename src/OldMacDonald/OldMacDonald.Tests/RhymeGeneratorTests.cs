@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
+﻿using System.IO;
 using System.Text;
 using Xunit;
 using OldMacDonald.ConsoleApp;
@@ -48,7 +46,8 @@ namespace OldMacDonald.Tests
         {
             IIOService ioService = new ConsoleService();
             ISongWriter songWriter = new SongWriter();
-            _rhymeGenerator = new RhymeGenerator(ioService, songWriter);
+            IValidator validator = new Validator(new ValidatorSettings());
+            _rhymeGenerator = new RhymeGenerator(ioService, songWriter, validator);
 
             using (StreamReader reader = new StreamReader(inputFilePath))
             {

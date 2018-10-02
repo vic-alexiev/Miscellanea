@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 using OldMacDonald.Song;
 using OldMacDonald.Song.Farm;
 
@@ -9,11 +8,16 @@ namespace OldMacDonald.ConsoleApp
     {
         private IIOService _ioService;
         private ISongWriter _songWriter;
+        private IValidator _validator;
 
-        public RhymeGenerator(IIOService ioService, ISongWriter songWriter)
+        public RhymeGenerator(
+            IIOService ioService,
+            ISongWriter songWriter,
+            IValidator validator)
         {
             _ioService = ioService;
             _songWriter = songWriter;
+            _validator = validator;
         }
 
         public void Run()
@@ -34,17 +38,17 @@ namespace OldMacDonald.ConsoleApp
 
                     switch (command)
                     {
-                        case "old":
+                        case Commands.Old:
                             {
                                 _ioService.WriteLine(GetOldSongLyrics());
                                 break;
                             }
-                        case "new":
+                        case Commands.New:
                             {
-                                _ioService.WriteLine(MakeNewVerses(6, 30));
+                                _ioService.WriteLine(MakeNewVerses());
                                 break;
                             }
-                        case "exit":
+                        case Commands.Exit:
                             {
                                 return;
                             }
@@ -77,43 +81,35 @@ namespace OldMacDonald.ConsoleApp
             return _songWriter.Compose(animals);
         }
 
-        private string MakeNewVerses(int maxCount, int inputMaxLength)
+        private string MakeNewVerses()
         {
-            bool versesCountValid;
-            int versesCount;
+            string inputCount;
             do
             {
-                _ioService.Write($"Count (max value: {maxCount}): ");
-                string count = _ioService.ReadLine();
-                versesCountValid = int.TryParse(count, out versesCount);
-            } while (!versesCountValid || versesCount <= 0 || versesCount > maxCount);
+                _ioService.Write($"Count (max value: {_validator.VersesMaxCount}): ");
+                inputCount = _ioService.ReadLine();
+            } while (!_validator.ValidateVersesCount(inputCount));
 
-            bool animalNameValid;
-            bool animalSoundValid;
-            string animalName;
-            string animalSound;
-            string limitations = $"max length: {inputMaxLength}, allowed chars: English letters, hyphen";
-            string pattern = @"^([a-zA-Z]+-)*[a-zA-Z]+$";
+            string name;
+            string sound;
+            int count = int.Parse(inputCount);
+            Animal[] animals = new Animal[count];
 
-            Animal[] animals = new Animal[versesCount];
-
-            for (int i = 0; i < versesCount; i++)
+            for (int i = 0; i < count; i++)
             {
                 do
                 {
-                    _ioService.Write($"Animal {i + 1} ({limitations}): ");
-                    animalName = _ioService.ReadLine();
-                    animalNameValid = Regex.IsMatch(animalName, pattern);
-                } while (!animalNameValid || animalName.Length > inputMaxLength);
+                    _ioService.Write($"Animal {i + 1} (max length: {_validator.AnimalNameMaxLength}): ");
+                    name = _ioService.ReadLine();
+                } while (!_validator.ValidateAnimalName(name));
 
                 do
                 {
-                    _ioService.Write($"Animal {i + 1} sound ({limitations}): ");
-                    animalSound = _ioService.ReadLine();
-                    animalSoundValid = Regex.IsMatch(animalSound, pattern);
-                } while (!animalSoundValid || animalSound.Length > inputMaxLength);
+                    _ioService.Write($"Animal {i + 1} sound (max length: {_validator.AnimalSoundMaxLength}): ");
+                    sound = _ioService.ReadLine();
+                } while (!_validator.ValidateAnimalSound(sound));
 
-                animals[i] = new Animal(animalName, animalSound);
+                animals[i] = new Animal(name, sound);
             }
 
             return _songWriter.Compose(animals);
